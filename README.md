@@ -32,3 +32,6 @@
 <p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=likitha77-epuri&show_icons=true&locale=en" alt="likitha77-epuri" /></p>
 
 <p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=likitha77-epuri&" alt="likitha77-epuri" /></p>
+## 🐍 GitHub Contribution Snake
+
+<img src="https://raw.githubusercontent.com/Likitha77-epuri/Likitha77-epuri/output/github-contribution-grid-snake.svg" />
