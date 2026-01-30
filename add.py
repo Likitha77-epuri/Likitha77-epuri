@@ -1,13 +1,3 @@
-def add_two_matrices(first_matrix, second_matrix, m, n):
-    # Complete this function
-    result=[]
-    for i in range(m):
-        row=[]
-        for j in range(n):
-            value=first_matrix[i][j]+second_matrix[i][j]
-            row.append(value)
-        result.append(row)
-    return result
 def convert_string_to_int(list_a):
     new_list = []
     for item in list_a:
@@ -16,22 +6,25 @@ def convert_string_to_int(list_a):
     return new_list
 
 
-def read_matrix_inputs(m):
-    num_list = []
-    for i in range(m):
-        list_a = input().split()
-        list_a = convert_string_to_int(list_a)
-        num_list.append(list_a)
-    return num_list
-
-
 m, n = input().split()
 m, n = int(m), int(n)
+num_list = []
 
-first_matrix = read_matrix_inputs(m)
-second_matrix = read_matrix_inputs(m)
+for i in range(m):
+    list_a = input().split()
+    list_a = convert_string_to_int(list_a)
+    num_list.append(list_a)
 
-# call the add_two_matrices matrices
-result=add_two_matrices(first_matrix,second_matrix,m,n)
-for i in result:
-    print(i)
+# Write your code here
+row_wise_max=[]
+for row in num_list:
+    row_wise_max.append(max(row))
+maxi=max(row_wise_max)
+row_index=row_wise_max.index(maxi)
+max_row=num_list[row_index]
+print(max_row)
+column_index=max_row.index(maxi)
+max_column=[]
+for row in num_list:
+    max_column.append(row[column_index])
+print(max_column)
