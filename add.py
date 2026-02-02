@@ -1,21 +1,26 @@
-board=[]
-for _ in range(3):
-    row=input().split()
-    board.append(row)
-winner=None
-for i in range(3):
-    if board[i][0]==board[i][1]==board[i][2]:
-        winner=board[i][0]
-for j in range(3):
-    if board[0][j]==board[1][j]==board[2][j]:
-        winner=board[0][j]
-if board[0][0]==board[1][1]==board[2][2]:
-    winner=board[0][0]
-if board[0][2]==board[1][1]==board[2][0]:
-    winner=board[0][2]
-if winner=="O":
-    print("O Wins")
-elif winner=="X":
-    print("X Wins")
+e=input()
+op_index=-1
+for i in range(1,len(e)):
+    if e[i] in "+-*/%":
+        op_index=i 
+        break
+if op_index==-1:
+    print("Invalid expression")
 else:
-    print("Tie")
+        op=e[op_index]
+        a=int(e[:op_index])
+        b=int(e[op_index+1:])
+        if op=="+":
+            print(a+b)
+        elif op=="-":
+                print(a-b)
+        elif op=="*":
+            print(a*b)
+        elif op=="/":
+            if b!=0:
+                print(a/b)
+            else:
+                print("Division by zero not allowed")
+        elif op=="%":
+            print(a%b)
+        
