@@ -1,22 +1,21 @@
-def get_sum_list(int_list):
-    con_sum_list=[]
-    end_index=len(int_list)-1
-    for i in range(end_index):
-        sum_list=int_list[i]+int_list[i+1]
-        con_sum_list.append(sum_list)
-    return con_sum_list
-def print_triangle(int_list):
-    while len(int_list)>1:
-        con_sum_list=get_sum_list(int_list)
-        print(con_sum_list)
-        int_list=con_sum_list
-def convert_string_to_int(str_num_list):
-    new_list=[]
-    for i in str_num_list:
-        num=int(i)
-        new_list.append(num)
-    return new_list
-str_num_list=input().split(",")
-int_list=convert_string_to_int(str_num_list)
-print(int_list)
-print_triangle(int_list)
+board=[]
+for _ in range(3):
+    row=input().split()
+    board.append(row)
+winner=None
+for i in range(3):
+    if board[i][0]==board[i][1]==board[i][2]:
+        winner=board[i][0]
+for j in range(3):
+    if board[0][j]==board[1][j]==board[2][j]:
+        winner=board[0][j]
+if board[0][0]==board[1][1]==board[2][2]:
+    winner=board[0][0]
+if board[0][2]==board[1][1]==board[2][0]:
+    winner=board[0][2]
+if winner=="O":
+    print("O Wins")
+elif winner=="X":
+    print("X Wins")
+else:
+    print("Tie")
