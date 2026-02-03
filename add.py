@@ -1,16 +1,41 @@
-def get_scores(ball_score_list):
-    ball_score_dict={}
-    for item in ball_score_list:
-        pair=item.split(":")
-        key,value=pair[0],int(pair[1])
-        if key in ball_score_dict:
-            score=ball_score_dict[key]
-            ball_score_dict[key]=score+value
+# Implement the Car class appropriately
+class Car:
+    def __init__(self, color, max_speed, acceleration, tyre_friction):
+        self.color=color
+        self.max_speed=max_speed
+        self.acceleration=acceleration
+        self.tyre_friction=tyre_friction
+        self.is_engine_started=False
+        self.current_speed=0
+
+    def start_engine(self):
+        self.is_engine_started=True
+
+    def stop_engine(self):
+        self.is_engine_started=False
+
+    def accelerate(self):
+        if not self.is_engine_started:
+            print("Car has not started yet")
         else:
-            ball_score_dict[key]=value
-    return ball_score_dict
-ball_score_list=input().split(",")
-pair=get_scores(ball_score_list)
-ball_score_items=pair.items()
-ball_score_items=sorted(ball_score_items)
-print(ball_score_items)
+            self.current_speed+=self.acceleration
+            
+    def apply_brakes(self):
+        self.current_speed-=self.tyre_friction
+        if self.current_speed<0:
+            self.current_speed=0
+
+    def sound_horn(self):
+        if self.is_engine_started:
+            print("Beep Beep")
+        else:
+            print("Car has not started yet")
+
+
+# You need not change any code below.
+# Do not call this function anywhere. It will automatically be called internally during tests.
+def default_test():
+ car = Car(color="Red", max_speed=250, acceleration=10, tyre_friction=3)
+ car.sound_horn() # Calling sound_horn() method when the is_engine_started is False
+ car.start_engine() # Starting the engine
+ car.sound_horn() # Calling the accelerate method when the is_engine_started is True
