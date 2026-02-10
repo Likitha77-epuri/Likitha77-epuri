@@ -6,10 +6,10 @@ def string_to_int(list_a):
     return new_list
 num_list=input().split()
 num_list=string_to_int(num_list)
-ma=max(num_list)
 num_set=set(num_list)
-first=set(range(1,ma+1))
-missing=first.difference(num_set)
-missing=list(missing)
-missing.sort()
-print(missing)
+if len(num_set)==1:
+    print("True")
+else:
+    num_list=list(num_set)
+    num_list.sort()
+    print(num_list)
