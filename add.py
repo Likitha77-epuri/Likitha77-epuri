@@ -1,25 +1,15 @@
-def print_lower_triangle(matrix):
-    # Complete this function
-    for i in range(len(matrix)):
-        row=matrix[i][:i+1]
-        print(row)
-
-def convert_string_to_int(list_a):
-    new_list = []
-    for item in list_a:
-        num = int(item)
+def string_to_int(list_a):
+    new_list=[]
+    for i in list_a:
+        num=int(i)
         new_list.append(num)
     return new_list
-
-
-m, n = input().split()
-m, n = int(m), int(n)
-num_list = []
-
-for i in range(m):
-    list_a = input().split()
-    list_a = convert_string_to_int(list_a)
-    num_list.append(list_a)
-
-# Call the print_lower_triangle function
-print_lower_triangle(num_list)
+num_list=input().split()
+num_list=string_to_int(num_list)
+ma=max(num_list)
+num_set=set(num_list)
+first=set(range(1,ma+1))
+missing=first.difference(num_set)
+missing=list(missing)
+missing.sort()
+print(missing)
