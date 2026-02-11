@@ -1,10 +1,8 @@
-class Item:
-    def __init__(self, name, price, category):
-        if price <= 0:
-            raise ValueError("Invalid value for price, got {}".format(price))
-        self.name = name
-        self.price = price
-        self.category = category
-
-    def get_detail(self):
-        return "{}@{}-{}".format(self.name, self.price, self.category)
+list_a=input().split(",")
+num_list=[]
+for i in list_a:
+    is_digit=i.isdigit()
+    if is_digit:
+        num=int(i)
+        num_list.append(num)
+print(num_list)
