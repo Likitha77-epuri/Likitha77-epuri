@@ -1,9 +1,17 @@
-num_set = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100}
-# Write your code here
-list_a=input().split()
-for i in list_a:
-    num=int(i)
-    num_set.discard(num)
-num_list=list(num_set)
-num_list.sort()
-print(num_list)
+# Implement the Car class appropriately
+class Car:
+ def __init__(self,color,max_speed,acceleration,tyre_friction):
+     self.color=color
+     self.max_speed=max_speed
+     self.acceleration=acceleration
+     self.tyre_friction=tyre_friction
+
+
+# You need not change any code below.
+# Do not call this function anywhere. It will automatically be called internally during tests.
+def default_test():
+ car = Car(color="Red", max_speed=250, acceleration=10, tyre_friction=3)
+ print(car.color)
+ print(car.max_speed)
+ print(car.acceleration)
+ print(car.tyre_friction)
