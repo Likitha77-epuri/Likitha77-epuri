@@ -1,9 +1,12 @@
-from datetime import datetime,timedelta
-date=input()
-date_format="%d %b %Y"
-today=datetime.strptime(date,date_format)
-yes=today-timedelta(days=1)
-day=today+timedelta(days=1)
-print(yes)
-print(today)
-print(day)
+string=input()
+l_string=string.lower()
+alpha={'a':'z','b':'y','c':'x','d':'w','e':'v','f':'u','g':'t','h':'s','i':'r',
+        'j':'q','k':'p','l':'o','m':'n','n':'m','o':'l','p':'k','q':'j','r':'i',
+        's':'h','t':'g','u':'f','v':'e','w':'d','x':'c','y':'b','z':'a'}
+s=""
+for i in l_string:
+    if i in alpha.keys():
+        s+=alpha[i]
+    else:
+        s+=" "
+print(s)
