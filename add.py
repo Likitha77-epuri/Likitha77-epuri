@@ -1,9 +1,6 @@
-from datetime import datetime
-date=input()
-date_format="%b %d %Y %I:%M %p"
-dt_obj=datetime.strptime(date,date_format)
-new=datetime(dt_obj.year+1,1,1)
-dt_diff=new-dt_obj
-h=dt_diff.days*24+dt_diff.seconds//3600
-m=(dt_diff.seconds//60)%60
-print("{} hours {} minutes".format(h,m))
+from datetime import datetime,timedelta
+data=input()
+n=int(input())
+data_obj=datetime.strptime(data,"%b %d %Y")
+d_2=data_obj+timedelta(days=n*365)
+print(d_2)
