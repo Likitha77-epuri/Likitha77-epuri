@@ -1,6 +1,11 @@
-from datetime import datetime,timedelta
-data=input()
-n=int(input())
-data_obj=datetime.strptime(data,"%b %d %Y")
-d_2=data_obj+timedelta(days=n*365)
-print(d_2)
+from datetime import datetime
+y_a,y_b=input().split()
+mon=0
+months=range(1,13)
+for y in range(int(y_a),int(y_b)+1):
+    for m in months:
+        datetime_obj=datetime(y,m,1)
+        name=datetime_obj.strftime("%A")
+        if name=="Monday":
+            mon+=1 
+print(mon)
