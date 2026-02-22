@@ -1,11 +1,7 @@
-from datetime import datetime
-y_a,y_b=input().split()
-mon=0
-months=range(1,13)
-for y in range(int(y_a),int(y_b)+1):
-    for m in months:
-        datetime_obj=datetime(y,m,1)
-        name=datetime_obj.strftime("%A")
-        if name=="Monday":
-            mon+=1 
-print(mon)
+import datetime
+zero=datetime.datetime(1970,1,1)
+u=int(input())
+seconds=datetime.timedelta(seconds=u)
+result=zero+seconds
+dt_format="%Y-%m-%d %H:%M:%S"
+print(result.strftime(dt_format))
