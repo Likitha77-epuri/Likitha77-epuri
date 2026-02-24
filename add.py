@@ -1,9 +1,12 @@
-from datetime import datetime,timedelta
-start=input()
-end=input()
-start_dt=datetime.strptime(start,"%b %d %Y")
-end_dt=datetime.strptime(end,"%b %d %Y")
-n=(end_dt-start_dt).days
-for i in range(n+1):
-    current=start_dt+timedelta(days=i)
-    print(current)
+a=input()
+s=a.lower()
+num={'a':'1','b':'2','c':'3','d':'4','e':'5','f':'6','g':'7','h':'8','i':'9',
+     'j':'10','k':'11','l':'12','m':'13','n':'14','o':'15','p':'16','q':'17',
+     'r':'18','s':'19','t':'20','u':'21','v':'22','w':'23','x':'24','y':'25','z':'26'}
+p=""
+for i in s:
+    if i==" ":
+        p=p[:-1]+" "
+    elif i in num.keys():
+        p+=num[i]+"-"
+print(p.strip("-"))
