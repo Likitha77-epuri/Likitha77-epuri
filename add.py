@@ -1,11 +1,6 @@
 class Cart:
-   def __init__(self):
-       self.items = {}
-   def add_item(self, item_name,quantity):
-       self.items[item_name] = quantity
-   def display_items(self):
-       print(self.items) # {'book': 3}
-
-a = Cart()
-a.add_item("book", 3)
-a.display_items()
+   @staticmethod
+   def greet():
+       print("Have a Great Shopping") # Have a Great Shopping
+ 
+Cart.greet()
