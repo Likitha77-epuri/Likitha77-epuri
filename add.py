@@ -1,6 +1,6 @@
-class Cart:
-   @staticmethod
-   def greet():
-       print("Have a Great Shopping") # Have a Great Shopping
- 
-Cart.greet()
+dict_a = {
+  'name': 'Teja',
+  'age': 15
+}
+del dict_a['age']
+print(dict_a) # {'name': 'Teja'}
