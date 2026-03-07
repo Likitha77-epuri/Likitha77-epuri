@@ -1,11 +1,6 @@
-class Cart:
-   def __init__(self):
-       self.items = {}
-   def add_item(self, item_name,quantity):
-       self.items[item_name] = quantity
-   def display_items(self):
-       print(self.items) # {'book': 3}
+def greet(arg_1, arg_2):
+    print(arg_1 + " " + arg_2) # Good Morning Ram
 
-a = Cart()
-a.add_item("book", 3)
-a.display_items()
+greeting = input() # Good Morning
+name = input() # Ram
+greet(greeting, name)
