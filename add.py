@@ -1,4 +1,15 @@
-tuple= ('a','b','c','d','e','f','g','h','i','j')
-print(tuple[0:2]) # ('a', 'b')
-print(tuple[-1:-3:-2]) # ('j',)
-print(tuple[1:7:2]) # ('b', 'd', 'f')
+class Product:
+    def __init__(self, name):
+       self.name = name
+    def display_product_details(self):
+       print("Product: {}".format(self.name)) # Product: TV
+
+class ElectronicItem(Product):
+    def set_warranty(self, warranty_in_months):
+        self.warranty_in_months = warranty_in_months
+   
+    def display_electronic_product_details(self):
+        self.display_product_details()
+
+e = ElectronicItem("TV")
+e.display_electronic_product_details()
